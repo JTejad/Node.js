@@ -158,3 +158,141 @@ const fruits3=  ['Pera', 'Manzana', 'Frutilla', 'Durazno'];
 fruits3.pop(); // ['Pera', 'Manzana', 'Frutilla'] 
 fruits3.shift(); // ['Manzana', 'Frutilla', 'Durazno'] 
 
+//Unir elementos de un array en una cadena (string) 
+
+/*En este caso utilizamos el método .join() que recibe como parámetro el separador de 
+nuestros elementos. */
+ 
+  const fruits4 = ['Pera', 'Manzana', 'Frutilla', 'Durazno']; 
+ 
+  fruits4.join(' - '); //'Pera - Manzana - Frutilla - Durazno' 
+
+//Recorrer los elementos de un array 
+/* Nos permite recorrer los elementos de un array y ejecutar una acción frente a cada 
+iteración. El método .forEach() no devuelve nada y espera que se le pase por parámetro 
+una función de callback que se ejecutará por cada elemento del array.  
+En el siguiente ejemplo, fruit toma el valor actual de la iteración y ejecuta la función 
+(fruit) => console.log(fruit) para imprimir cada valor en la consola. */
+
+const fruits5=  ['Pera', 'Manzana', 'Frutilla', 'Durazno']; 
+ 
+fruits5.forEach((fruit) => console.log(fruit)); 
+
+// Pera 
+// Manzana 
+// Frutilla 
+// Durazno 
+
+/*Filtrar elementos en un array 
+Para ello usaremos el método .filter() a quien le debemos pasar una función de 
+callback con la condición que deben cumplir los elementos para ser filtrados. */
+
+const prices=  [125, 237, 58, 1920, 418]; 
+ 
+prices.filter((price) => price >= 200);  
+// [237, 1920, 418] 
+
+//Modificar o crear arrays a partir de otros 
+
+/*
+● .slice(start, end): Devuelve los elementos desde la posición start hasta end 
+(excluido). Inmutable 
+● .splice(start, size): Altera el array, eliminando size (cantidad de elementos) 
+desde posición start.Mutable
+● .copyWithin(pos, start, end): Altera el array, modificando desde pos y 
+copiando los ítems desde start a end.Mutable 
+● .fill(element, start, end): rellena el array con element desde start hasta 
+end.Mutable 
+*/
+
+/*Crear nuevos arrays a partir de una condición 
+El método .map() es un método muy potente y útil para trabajar con arrays, puesto que su 
+objetivo es devolver un nuevo array donde cada uno de sus elementos será lo que devuelva 
+la función callback por cada uno de los elementos del array original.*/
+ 
+   const prices2=  [125, 237, 58, 1920, 418]; 
+ 
+   price2.map((price) => price *= 1.21); 
+    
+   // devuelve un array con todos los precios + el 21% 
+   // [151.25, 287.77, 70.18, 2329.2, 505.78]
+/*Acumular los valores de una array 
+El método .reduce() se encarga de recorrer todos los elementos del array, e ir 
+acumulando sus valores (o alguna operación diferente) y sumarlo todo, para devolver su 
+resultado final.*/
+
+  const prices3=  [125, 237, 58, 1920, 418]; 
+ 
+  prices3.reduce((total, price) => total+  price,0 );  
+  // 2758  
+  /* total toma el 0 como \valor inicial\ y en cada iteración 
+  * se le va sumando el price actual hasta recorrer todo el  
+  * array 
+  */  
+ 
+ 
+  /*Iteradores de array 
+  Si bien es posible recorrer arrays con los ciclos tradicionales como un for, existen una 
+  estructura para este fin que simplifica mucho el trabajo a realizar. 
+  Esta es la estructura for of, que propone la siguiente sintaxis:*/
+      
+    const fruits6 = ['Pera', 'Manzana', 'Frutilla', 'Durazno']; 
+      for (let fruit of fruits6) { 
+       console.log(fruit); 
+     } 
+   
+   
+   
+     // Pera 
+     // Manzana 
+     // Frutilla 
+     // Durazno 
+
+
+//Template Literals 
+/*Cadenas de texto más simples 
+Los literal strings o template literals son una característica de JavaScript introducida en ES6 
+que simplifica la creación y manipulación de cadenas de texto. Se escriben utilizando 
+backticks (``) en lugar de comillas simples o dobles. 
+Características principales: 
+1.   Interpolación de variables: Permiten insertar valores dinámicamente dentro de una 
+cadena utilizando la sintaxis ${expresión}.*/
+ 
+  const userName=  'Juan'; 
+  const age=  30; 
+ 
+  console.log(`Hola, mi nombre es ${userName}  
+  y tengo ${age} años.`); 
+  // Hola, mi nombre es Juan y tengo 30 años. 
+  
+/*
+2.  Soporte para varias líneas: Se pueden escribir cadenas que abarcan múltiples líneas 
+sin necesidad de usar caracteres especiales como \n.
+*/
+ 
+ 
+  const message=  `Esta es una cadena 
+  que ocupa varias 
+  líneas.`; 
+  
+  console.log(message); 
+ 
+  // Esta es una cadena 
+  // que ocupa varias 
+  // líneas.
+
+/*
+3.  Inclusión de expresiones complejas: Además de variables, se pueden incluir 
+operaciones y funciones directamente.
+*/ 
+ 
+   const price = 150; 
+  const tax = 1.21; 
+   console.log(`El precio final es de $${price * tax}.`); 
+  // El precio final es de $181.5. 
+ 
+ 
+/*En conclusión, los template literals son una herramienta poderosa y flexible que optimiza el 
+manejo de cadenas en JavaScript, especialmente en casos donde se mezclan variables, 
+expresiones y texto.*/
+   
