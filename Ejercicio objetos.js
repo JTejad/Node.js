@@ -32,3 +32,23 @@ autosNuevos.forEach(auto => {
 });
 
 
+function contarAutosColor(colorBuscado){
+
+  let contador = 0
+
+  for (const{color} of autos){
+
+    if (color.toLowerCase() === colorBuscado.toLowerCase()) {
+    
+      contador ++; 
+      }
+
+    }
+
+    console.log(`Hay ${contador} automoviles de ${colorBuscado}.`);
+
+
+  }
+
+contarAutosColor('Negro'); // Muestra: Hay 2 automóvil(es) de color Negro.
+contarAutosColor('Blanco'); // Muestra: Hay 2 automóvil(es) de color Blanco.
